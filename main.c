@@ -5,23 +5,7 @@
   * @brief          : STM32 TB6612FNG Motor Driver Test Code
   * @author         : Generated for STM32 Cube IDE
   ******************************************************************************
-  * Hardware Connections:
-  * TB6612FNG -> STM32
-  * VCC -> 3.3V/5V
-  * GND -> GND
-  * VM -> Motor Power Supply (2.5V-13.5V)
-  *
-  * Motor A:
-  * AIN1 -> PA0 (GPIO)
-  * AIN2 -> PA1 (GPIO)
-  * PWMA -> PA2 (TIM2_CH3 PWM)
-  *
-  * Motor B:
-  * BIN1 -> PA3 (GPIO)
-  * BIN2 -> PA4 (GPIO)
-  * PWMB -> PA5 (TIM2_CH1 PWM)
-  *
-  * STBY -> PA6 (GPIO - Active High)
+ 
   ******************************************************************************
   */
 /* USER CODE END Header */
@@ -117,7 +101,7 @@ void TB6612_Init(void) {
     MotorA.IN2_Port = LMOTOR_IN2_GPIO_Port;
     MotorA.IN2_Pin = LMOTOR_IN2_Pin;
     MotorA.pwm_timer = &htim2;
-    MotorA.pwm_channel = TIM_CHANNEL_1;  // TIM1_CH4 (PA11)
+    MotorA.pwm_channel = TIM_CHANNEL_1;  
 
     // Initialize Right Motor (Motor B) structure
     MotorB.IN1_Port = RMOTOR_IN1_GPIO_Port;
@@ -864,3 +848,4 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
